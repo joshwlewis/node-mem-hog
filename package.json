@@ -1,0 +1,18 @@
+{
+  "name": "mem-hog",
+  "version": "1.0.0",
+  "main": "hog.js",
+  "scripts": {
+    "start": "node hog.js",
+    "build": "concurrently \"node --expose-gc --max-old-space-size=2048 bursty-hog.js\" \"node --expose-gc --max-old-space-size=2048 bursty-hog.js\" \"node --expose-gc --max-old-space-size=2048 bursty-hog.js\""
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
