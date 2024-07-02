@@ -10,9 +10,11 @@ echo "/sys/fs/crgoup"
 stat -fc %T /sys/fs/cgroup/ || true
 ls -al /sys/fs/cgroup/ || true
 
-declare -a settings=(limit-in-bytes min low high max)
-echo "Reading cgroups settings from /sys/fs/cgroup/memory"
+echo "Reading /sys/fs/cgroup/memory/memory-limit-in-bytes"
+cat "/sys/fs/cgroup/memory/memory-limit-in-bytes" || true
+
+declare -a settings=(min low high max)
 for setting in "${settings[@]}"; do
-    echo "Reading memory.${setting}"
-    cat "/sys/fs/cgroup/memory/memory.${setting}" || true
+    echo "Reading /sys/fs/cgroup/memory.${setting}"
+    cat "/sys/fs/cgroup/memory.${setting}" || true
 done
