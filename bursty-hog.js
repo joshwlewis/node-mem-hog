@@ -32,8 +32,8 @@ setInterval(() => {
     `bursty: heapTotal = ${toMb(heapTotal)}; heapUsed = ${toMb(heapUsed)}; heapLimit = ${toMb(heapLimit)}; intervals = ${intervals}`,
   );
 
-  // 5 out of 100 iterations should be near max heap.
-  if (intervals % 100 < 5) {
+  // 10 out of 100 iterations should be near max heap.
+  if (intervals % 100 < 10) {
     let headroom = heapLimit - minHeadroom - heapTotal;
     if (allocationSteps == 0) {
       allocationSteps = Math.floor(headroom / (allocationSize * 5));
