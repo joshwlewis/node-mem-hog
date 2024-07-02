@@ -36,7 +36,7 @@ setInterval(() => {
   if (intervals % 100 < 10) {
     let headroom = heapLimit - minHeadroom - heapTotal;
     if (allocationSteps == 0) {
-      allocationSteps = Math.floor(headroom / (allocationSize * 5));
+      allocationSteps = Math.floor(headroom / (allocationSize * 10));
     }
     // allocate a big chunk memory over several iterations and several intervals.
     if (allocationSteps > 0) {
