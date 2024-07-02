@@ -4,6 +4,7 @@
   "main": "hog.js",
   "scripts": {
     "start": "node hog.js",
+    "prebuild": "./read-cgroups.sh",
     "build": "concurrently \"node --expose-gc bursty-hog.js\" \"node --expose-gc bursty-hog.js\" \"node --expose-gc bursty-hog.js\" \"node --expose-gc bursty-hog.js\""
   },
   "engines": {
